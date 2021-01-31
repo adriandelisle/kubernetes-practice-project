@@ -7,5 +7,5 @@ app.get("/am-i-up", (req, res) => {
 });
 
 app.listen(port, () => {
-  console.log(`Example app listening at http://localhost:${port}`);
+  console.log(`Aggregator app listening at http://localhost:${port}`);
 });
