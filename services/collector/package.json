@@ -1,14 +1,13 @@
 {
   "name": "collector",
   "version": "1.0.0",
-  "description": "",
+  "description": "Collector service for k8s practice project with mock data",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "PORT=8080 node app.js",
+    "start": "node app.js",
     "dev": "nodemon app.js"
   },
-  "author": "",
+  "author": "Adrian De Lisle",
   "license": "ISC",
   "dependencies": {
     "express": "^4.17.1"
