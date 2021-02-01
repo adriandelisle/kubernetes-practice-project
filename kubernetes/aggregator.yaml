@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: k8s-practice-aggregator
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: aggregator
+  template:
+    metadata:
+      labels:
+        app: aggregator
+    spec:
+      containers:
+      - name: k8s-practice-aggregator
+        image: adriandelisle/k8s-practice-aggregator
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        env:
+          - name: PORT
+            value: "80"
+          - name: COLLECTOR_URL
+            value: "collector-service:8080"
+        ports:
+        - containerPort: 80
