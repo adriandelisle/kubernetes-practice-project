@@ -32,6 +32,7 @@ app.get("/average/city/:city", async (req, res) => {
     res.json(responseData);
   } catch (e) {
     console.error(e);
+    res.status(500).json({ error: e.toString() });
   }
 });
 
