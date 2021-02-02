@@ -24,3 +24,14 @@ spec:
             value: "80"
         ports:
         - containerPort: 80
+        readinessProbe:
+          httpGet:
+            path: /am-i-up
+            port: 80
+          periodSeconds: 5
+        livenessProbe:
+          httpGet:
+            path: /am-i-up
+            port: 80
+          initialDelaySeconds: 3
+          periodSeconds: 5
