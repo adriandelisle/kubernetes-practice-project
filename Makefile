@@ -9,5 +9,6 @@ k8s-up:
 
 k8s-down:
 	kubectl delete service collector-service
+	kubectl delete service aggregator-service
 	kubectl delete deployment k8s-practice-collector
 	kubectl delete deployment k8s-practice-aggregator

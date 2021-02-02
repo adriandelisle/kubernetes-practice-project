@@ -64,4 +64,20 @@ PORT=8081 COLLECTOR_URL="localhost:8080" npm run dev
 
 ## Minikube
 
-TODO
+### Starting up everything
+
+- Bring up minikube
+  - `> minikube start` (WSL2 `> minikube start driver=docker`)
+- Create a tunnel
+  - In another terminal `> minikube tunnel`
+  - [LoadBalancer access](https://minikube.sigs.k8s.io/docs/handbook/accessing/#loadbalancer-access)
+- Bring up the deployments and services
+  - `> make k8s-up`
+
+### Accessing the service
+
+`> curl localhost:8080/average/city/:city/`
+
+### Clean up
+
+`> make k8s-down`
